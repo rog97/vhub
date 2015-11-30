@@ -1,24 +1,47 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}Welcome | {{ block.super }}{% endblock %}
 
+<style>
+  {% block style %}
+  .text-align-center {
+    text-align: center;
+  }
+  {% endblock %}
+</style>
+
 {% block jumbotron_content %}
 <h1>Welcome to Venture Hub</h1>
-<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-<p>To see the difference between static and fixed top navbars, just scroll.</p>
+<p>Venture Hub is your one-stop shop to find mythical unicorns, and slay those subprime unicorns too! We empower our users, so if you know of any mythical unicorns, please make sure to add them to our site!</p>
 <p>
-  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View Startups &raquo;</a>
 </p>
 {% endblock %}
 
 {% block content %}
+<div class="row">
+  <div class="col-sm-3 pull-right">
+    <p class="lead text-align-center">{{ title }}</p>
 
-<h1>{{ title }}</h1>
+    <form method="POST" action="">{% csrf_token %}
 
-<form method="POST" action="">{% csrf_token %}
+      {{ form|crispy }}
+      <input class='btn btn-primary' type="submit" value="Sign up!"/>
+    </form>
+  </div>
 
-  {{ form.as_p }}
-  <input type="submit" value="Sign up!"/>
-</form>
+  <div class="col-sm-3">
+    <p class="lead text-align-center">Built with Python</p>
+  </div>
 
+  <div class="col-sm-3">
+    <p class="lead text-align-center">Learn about startups</p>
+  </div>
+
+  <div class="col-sm-3">
+    <p class="lead text-align-center">Slay the mythical creatures</p>
+  </div>
+
+</div>
 {% endblock %}
