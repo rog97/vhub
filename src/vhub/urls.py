@@ -22,6 +22,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', 'vhubs.views.home', name='home'),
     url(r'^contact/$', 'vhubs.views.contact', name='contact'),
+    url(r'^about/$', 'vhub.views.about', name='about'),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
