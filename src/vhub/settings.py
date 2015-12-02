@@ -41,8 +41,10 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'registration',
     'vhubs',
 )
 
@@ -118,4 +120,10 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "static_pro", "media_root")
 
+# Crispy form tags
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Registration redux
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
