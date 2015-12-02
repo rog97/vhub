@@ -20,18 +20,20 @@
 
       {% endblock %}
     </style>
-
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Lato:400,700,900' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
   {% include "navbar.html" %}
 
-    <div class="container-fluid">
+  {% block jumbotron %}
+  <!-- Main component for a primary marketing message or call to action -->
 
-      {% block jumbotron %}
-      <!-- Main component for a primary marketing message or call to action -->
+  {% endblock %}
 
-      {% endblock %}
+    <div class="container">
+
+
 
       {% block content %}
 

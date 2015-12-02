@@ -1,3 +1,51 @@
+* {
+	font-family: "Lato", sans-serif;
+	.thumbnail p {
+		font-family: "Lato", sans-serif;
+	}
+	.col-md-6 p {
+		font-family: "Lato", sans-serif;
+	}
+}
+
+body {
+	background-color: #F9F9F9;
+	color: #565A5C;
+}
+
 .text-align-center {
   text-align: center;
+}
+
+.navbar-default {
+  background-color: #00796B;
+  color: #FFFFFF;
+  border-radius: 0;
+  border: 0;
+  z-index: 1;
+}
+
+.navbar-default > a {
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #FFC107;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #FFC107;
+}
+
+.jumbotron {
+  background-color: #009688;
+  color: white;
 }
