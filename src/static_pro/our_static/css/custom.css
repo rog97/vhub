@@ -25,6 +25,10 @@ body {
   z-index: 1;
 }
 
+.navbar-static-top {
+  margin-bottom: 0px !important;
+}
+
 .navbar-default > a {
   color: #FFFFFF;
 }
@@ -46,6 +50,48 @@ body {
 }
 
 .jumbotron {
-  background-color: #009688;
+	position: relative;
+	top: -3vh;
+	height: 90vh;
+	z-index: 0;
+	margin: 0 auto;
   color: white;
+	background: url("../img/unicorn2.jpg") no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
+
+.jumbotron h1 {
+		text-align: center;
+		font-weight: 700;
+		color: #FFFFFF;
+		position: relative;
+		top: 30vh;
+    font-size: 70px;
+	}
+
+.jumbotron p {
+		text-align: center;
+		font-family: "Open sans", sans-serif;
+		color: #FFFFFF;
+		position: relative;
+		top: 30vh;
+	}
+
+.jumbotron .btn-warning {
+		position: relative;
+		color: #FFFFFF;
+		font-size: 15px;
+		opacity: 0.9;
+		border-radius: 3px;
+		top: 0vh;
+		-webkit-transition: background-color .2s ease-in-out;
+		-moz-transition: background-color .2s ease-in-out;
+    	transition: background-color .2s ease-in-out;
+	}
+
+.jumbotron .btn-warning:hover {
+		background-color: #EC971F;
+	}
