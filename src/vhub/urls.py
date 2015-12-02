@@ -22,7 +22,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', 'vhubs.views.home', name='home'),
     url(r'^contact/$', 'vhubs.views.contact', name='contact'),
-    url(r'^startup/$', 'vhub.views.startup', name='startup'),
+    url(r'^index/$', 'vhub.views.index', name='index'),
+    url(r'^news/$', 'vhub.views.news', name='news'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]

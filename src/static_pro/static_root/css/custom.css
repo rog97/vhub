@@ -11,6 +11,7 @@
 body {
 	background-color: #F9F9F9;
 	color: #565A5C;
+  min-height: 1200px;
 }
 
 .text-align-center {
@@ -35,10 +36,12 @@ body {
 
 .navbar-default .navbar-brand {
     color: #FFFFFF;
+    font-weight: 700;
 }
 
 .navbar-default .navbar-brand:hover {
-    color: #FFC107;
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -95,3 +98,7 @@ body {
 .jumbotron .btn-warning:hover {
 		background-color: #EC971F;
 	}
+
+.fa {
+  color: #009688;
+}
