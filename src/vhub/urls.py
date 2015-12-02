@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^contact/$', 'vhubs.views.contact', name='contact'),
     url(r'^index/$', 'startups.views.index', name='index'),
     url(r'^news/$', 'vhub.views.news', name='news'),
+    url(r'^analytics/$', 'vhub.views.analytics', name='analytics'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]
