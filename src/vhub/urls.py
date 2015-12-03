@@ -22,6 +22,9 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', 'vhubs.views.home', name='home'),
     url(r'^contact/$', 'vhubs.views.contact', name='contact'),
+    url(r'^create/$', 'startups.views.create_view', name='create_view'),
+    url(r'^startup/(?P<object_id>\d+)/$', 'startups.views.startup_view', name='startup_view'),
+    url(r'^startup/(?P<slug>[\w-]+)/$', 'startups.views.startup_slug_view', name='startup_slug_view'),
     url(r'^index/$', 'startups.views.index', name='index'),
     url(r'^news/$', 'vhub.views.news', name='news'),
     url(r'^analytics/$', 'vhub.views.analytics', name='analytics'),

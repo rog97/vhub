@@ -14,26 +14,26 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='startup',
             name='description',
-            field=models.TextField(default='-'),
+            field=models.TextField(default=True),
         ),
         migrations.AddField(
             model_name='startup',
             name='founders',
-            field=models.CharField(default='-', max_length=100),
+            field=models.CharField(default=True, max_length=100),
         ),
         migrations.AddField(
             model_name='startup',
             name='investors',
-            field=models.CharField(default='-', max_length=200),
+            field=models.CharField(default=True, max_length=200),
         ),
         migrations.AddField(
             model_name='startup',
             name='latest_funding',
-            field=models.DecimalField(max_digits=50, default='-', decimal_places=1),
+            field=models.DecimalField(max_digits=50, default=True, decimal_places=1),
         ),
         migrations.AddField(
             model_name='startup',
             name='total_funding',
-            field=models.DecimalField(max_digits=50, default='-', decimal_places=1),
+            field=models.DecimalField(max_digits=50, default=True, decimal_places=1),
         ),
     ]
