@@ -28,10 +28,11 @@ urlpatterns = [
     url(r'^startup/(?P<slug>[\w-]+)/$', 'startups.views.startup_slug_view', name='startup_slug_view'),
     url(r'^startup/(?P<object_id>\d+)/edit/$', 'startups.views.update_view', name='update_view'),
     url(r'^index/$', 'startups.views.index', name='index'),
-    url(r'^startups/index/$', StartupIndex.as_view(), name='startup_index_view'), 
+    url(r'^startups/index/$', StartupIndex.as_view(), name='startup_index_view'),
     url(r'^news/$', 'vhub.views.news', name='news'),
     url(r'^analytics/$', 'vhub.views.analytics', name='analytics'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 

@@ -6,7 +6,7 @@
 <h1>Startups</h1>
 <ul>
     {% for instance in object_list %}
-        <li>{{ instance }} = {{instance.description}}</li>
+        <li><a href="/startup/{{ instance.pk }}/">{{ instance }} = {{instance.description}}</a> </li>
     {% empty %}
         <li>No startups yet.</li>
     {% endfor %}
