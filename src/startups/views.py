@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from .forms import StartupAddForm, StartupModelForm
 from .models import Startup
+import pycrunchbase as pyc
 
 class StartupIndex(ListView):
     model = Startup
@@ -25,6 +26,14 @@ def index(request):
     "queryset": queryset,
     }
     return render(request, template, context)
+
+def get_cb_co(request):
+    cb = pyc.CrunchBase('f0172d1df1ca552457f0722ed6468809')
+    company = cb.organization("betterment")
+    return company
+    # try:
+    #     refresh = request.GET['refresh']
+
 
 def create_view(request):
     form = StartupModelForm(request.POST or None)
