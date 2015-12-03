@@ -30,6 +30,7 @@ def index(request):
 def get_cb_co(request):
     cb = pyc.CrunchBase('f0172d1df1ca552457f0722ed6468809')
     company = cb.organization("betterment")
+    print("fuck you bitch")
     return company
     # try:
     #     refresh = request.GET['refresh']
