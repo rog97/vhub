@@ -2,13 +2,19 @@
 
 {% block content %}
 
-<br><br>
-<h1>Startups</h1>
-<ul>
+<br><br><br>
+<h1>Upvote the Next Unicorns</h1>
+<br>
+  <div class="row">
     {% for instance in object_list %}
-        <li><a href="/startup/{{ instance.pk }}/">{{ instance }} = {{instance.description}}</a> </li>
-    {% empty %}
-        <li>No startups yet.</li>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <!-- logo should go here -->
+          <div class="caption">
+            <p><a href="/startup/{{ instance.pk }}/" class="list-links"><strong>{{ instance }}</strong> <br> {{instance.description}}</a></p>
+          </div>
+      </div>
+    </div>
     {% endfor %}
-</ul>
+  </div>
 {% endblock content %}
