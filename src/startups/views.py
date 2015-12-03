@@ -1,11 +1,22 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
-
-from .forms import StartupAddForm
+from django.views.generic.list import ListView
+from .forms import StartupAddForm, StartupModelForm
 from .models import Startup
 
+class StartupIndex(ListView):
+    model = Startup
+    # template_name = "index.html"
+    #
+    # def get_context_data(self, **kwargs):
+    #     context = super(StartupIndex, self).get_context_data(**kwargs)
+    #     context["queryset"] = self.get_queryset()
+    #     return context
 
-# Create your views here.
+    def get_queryset(self, *args, **kwargs):
+        query = super(StartupIndex, self).get_queryset(**kwargs)
+        # query = query.filter(name__icontains="Startup")
+        return query
 
 def index(request):
     queryset = Startup.objects.all()
@@ -16,22 +27,28 @@ def index(request):
     return render(request, template, context)
 
 def create_view(request):
-    form = StartupAddForm(request.POST or None)
+    form = StartupModelForm(request.POST or None)
     if form.is_valid():
-        data = form.cleaned_data
-        name = data.get("name")
-        latest_funding = data.get("latest_funding")
-        description = data.get("description")
-        # Instantiate the startup
-        new_startup = Startup()
-        new_startup.name = name
-        new_startup.latest_funding = latest_funding
-        new_startup.description = description
-        # Sticking it into the db
-        new_startup.save()
-    template = "create_view.html"
+        instance = form.save(commit=False)
+        instance.save()
+    template = "form.html"
     context = {
         "form": form,
+        "submit_btn": "Add Startup",
+    }
+    return render(request, template, context)
+
+def update_view(request, object_id=None):
+    startup = get_object_or_404(Startup, id=object_id)
+    form = StartupModelForm(request.POST or None, instance=startup)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+    template = "form.html"
+    context = {
+        "object": startup,
+        "form": form,
+        "submit_btn": "Update Startup",
     }
     return render(request, template, context)
 

@@ -2,13 +2,7 @@
 
 
 {% block content %}
-<br>
-<br>
-<br>
-  <form method="POST" action="">
-    {% csrf_token %}
-  {{ form }}
-  <input type="submit" value='Add Startup' />
-<form>
+
+{% include "form_include.html" with form=form submit_btn="Add Startup" %}
 
 {% endblock content %}

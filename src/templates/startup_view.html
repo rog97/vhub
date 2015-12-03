@@ -6,8 +6,7 @@
 </br>
 </br>
 <h1>Startup: {{ object.name }}</h1>
-<p>On this page, we'll have a list of startups</p>
-<p>You'll be able to click on a different startup, and it will take you to the detail page which pulls in data using the Crunchbase API</p>
-<p>There will also be a button to add a startup</p>
+<p>{{ object.latest_funding }}</p>
+<p>{{ object.description}}</p>
 
 {% endblock %}

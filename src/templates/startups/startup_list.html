@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><br>
+<h1>Startups</h1>
+<ul>
+    {% for instance in object_list %}
+        <li>{{ instance }} = {{instance.description}}</li>
+    {% empty %}
+        <li>No startups yet.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
