@@ -27,13 +27,14 @@ def index(request):
     }
     return render(request, template, context)
 
-def get_cb_co(request):
+def get_cb_co(company_name):
     cb = pyc.CrunchBase('f0172d1df1ca552457f0722ed6468809')
-    company = cb.organization("betterment")
-    print("fuck you bitch")
-    return company
-    # try:
-    #     refresh = request.GET['refresh']
+    company = cb.organization(company_name)
+    what_is_co = company.description
+    context = {
+        "what_is_co": what_is_co,
+    }
+    return what_is_co
 
 
 def create_view(request):
@@ -76,8 +77,12 @@ def startup_slug_view(request, slug=None):
 
 def startup_view(request, object_id=None):
     startup = get_object_or_404(Startup, id=object_id)
+    print('----')
+    startup_str = str(startup.name.lower())
     template = "startup_view.html"
     context = {
         "object": startup,
+        "what_is_co": get_cb_co(startup_str),
     }
+
     return render(request, template, context)

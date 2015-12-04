@@ -29,7 +29,7 @@ class StartupModelForm(forms.ModelForm):
             "latest_funding",
             "description",
         ]
-        
+
     def clean_name(self):
         name = self.cleaned_data.get("name")
         if len(name) > 1:
