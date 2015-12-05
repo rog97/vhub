@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from startups.views import StartupIndex
+from startups.views import StartupIndex#, StartupDelete
 
 urlpatterns = [
     url(r'^$', 'vhubs.views.home', name='home'),
@@ -27,8 +27,9 @@ urlpatterns = [
     url(r'^startup/(?P<object_id>\d+)/$', 'startups.views.startup_view', name='startup_view'),
     url(r'^startup/(?P<slug>[\w-]+)/$', 'startups.views.startup_slug_view', name='startup_slug_view'),
     url(r'^startup/(?P<object_id>\d+)/edit/$', 'startups.views.update_view', name='update_view'),
-    url(r'^index/$', 'startups.views.index', name='index'),
     url(r'^startups/index/$', StartupIndex.as_view(), name='startup_index_view'),
+    url(r'^startups/index/$', 'startups.views.index', name='startup_list'),
+    url(r'^delete/(?P<pk>\d+)$', 'startups.views.startup_delete', name='startup_delete'),
     url(r'^news/$', 'vhub.views.news', name='news'),
     url(r'^analytics/$', 'vhub.views.analytics', name='analytics'),
     url(r'^admin/', include(admin.site.urls)),
