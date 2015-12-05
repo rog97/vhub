@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>Delete {{ object.name }}</h1>
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete this company?</p>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

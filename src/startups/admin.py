@@ -5,9 +5,9 @@ from django.contrib import admin
 from .models import Startup
 
 class StartupAdmin(admin.ModelAdmin):
-    list_display = ["__str__", "latest_funding", "description"]
+    list_display = ["__str__", "description"]
     search_fields = ["name","description"]
-    list_filter = ["latest_funding"]
+    # list_filter = ["latest_funding"]
     list_editable = ["description"]
     class Meta:
         model = Startup

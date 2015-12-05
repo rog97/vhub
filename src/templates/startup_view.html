@@ -5,8 +5,29 @@
 
 </br>
 </br>
-<h1>Startup: {{ object.name }}</h1>
-<p>{{ object.latest_funding }}</p>
-<p>{{ object.description}}</p>
+</br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    <h1><strong>{{ object.name }}</strong></h1>
+      <br>
+      <h4><strong>Founder(s)</strong></h4>
+      <p>{{ founders }}</p>
+      <br>
+      <h4><strong>About</strong></h4>
+      <p>{{ what_is_co }}<p>
+      <br>
+      <h4><strong>Funding History</strong></h4>
+      <p>{{ funding_rounds }}</p>
+      <br>
+      <h4><strong>Investor(s)</strong></h4>
+      <p>{{ investors }}</p>
+
+    </div>
+  </div>
+</div>
+<!-- <p>{{ object.latest_funding }}</p>
+<p>{{ object.description}}</p> -->
 
 {% endblock %}
