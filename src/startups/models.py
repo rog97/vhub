@@ -15,6 +15,7 @@ class Startup(models.Model):
     description = models.TextField()
     votes = VotableManager()
 
+
     def __str__(self):
         return self.name
 
