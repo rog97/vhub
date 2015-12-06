@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^startups/index/$', 'startups.views.index', name='startup_list'),
     url(r'^delete/(?P<pk>\d+)$', 'startups.views.startup_delete', name='startup_delete'),
     url(r'^news/$', 'vhub.views.news', name='news'),
+    url(r'^studio/$', 'studio.views.podcast', name='podcast'),
     url(r'^analytics/$', 'vhub.views.analytics', name='analytics'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.simple.urls')),

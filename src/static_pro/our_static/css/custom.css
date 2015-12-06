@@ -116,3 +116,20 @@ body {
   color: #FF5722;
   text-decoration: none;
 }
+
+.right-relative {
+  position: absolute;
+  left: 500px;
+  top: 25px;
+}
+
+.text-center {
+  position: relative;
+  left: 140px;
+  top: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: center;
+
+}

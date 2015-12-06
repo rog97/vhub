@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'registration',
     'startups',
     'vhubs',
+    'vote',
+    'studio',
 )
 
 MIDDLEWARE_CLASSES = (
