@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+</br>
+</br>
+</br>
+<h1>Analytics</h1>
+<br>
+<h4><strong>Funding Rounds</strong></h4>
+<p>{{ funding_rounds | safe }}</p>
+<br>
+<h4><strong>Top Venture Investors</strong></h4>
+<tb>{{ great_vcs | safe }}</tb>
+
+
+{% endblock %}

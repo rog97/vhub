@@ -15,7 +15,7 @@
         <li><a href="{% url 'startup_index_view' %}">Startups</a></li>
         {% if request.user.is_authenticated %}
         <li><a href="{% url 'podcast' %}">Studio</a></li>
-        <li><a href="{% url 'analytics' %}">Analytics</a></li>
+        <li><a href="{% url 'analysis' %}">Analytics</a></li>
         <li><a href="{% url 'create_view' %}">Add a Startup</a></li>
         {% endif %}
         <!-- <li class="dropdown">

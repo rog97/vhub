@@ -8,7 +8,6 @@ from .models import Startup
 import requests
 from requests.exceptions import HTTPError
 import pycrunchbase as pyc
-import safygiphy
 import urllib
 
 # def get_giphy():

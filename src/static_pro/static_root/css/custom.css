@@ -102,3 +102,34 @@ body {
 .fa {
   color: #009688;
 }
+
+.list-links {
+  font-family: "Open sans", sans-serif;
+  color: #727272;
+  -webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.list-links:hover {
+  font-family: "Open sans", sans-serif;
+  color: #FF5722;
+  text-decoration: none;
+}
+
+.right-relative {
+  position: absolute;
+  left: 500px;
+  top: 25px;
+}
+
+.text-center {
+  position: relative;
+  left: 140px;
+  top: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: center;
+
+}
