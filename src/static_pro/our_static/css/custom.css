@@ -131,5 +131,28 @@ body {
   vertical-align: middle;
   margin: 0 auto;
   text-align: center;
+}
 
+/* Pretty Pandas Dataframes */
+.dataframe * {
+  border-color: #c0c0c0 !important;
+}
+.dataframe th {
+  background: #B2DFDB;
+  text-align: center;
+}
+.dataframe td {
+    background: #fff;
+    text-align: center;
+    min-width:5em;
+}
+
+/* Format summary rows */
+.dataframe-summary-row tr:last-child,
+.dataframe-summary-col td:last-child {
+    background: #eee;
+}
+.dataframe-summary-col td:nth-child(2) {
+    background: #eee;
+    text-align: left;
 }

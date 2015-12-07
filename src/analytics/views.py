@@ -48,7 +48,7 @@ def funding_rounds():
     year = funded_at.year().name('year')
 
     expr = (rounds[(rounds.funding_round_type == 'venture') &
-                   year.between(2001, 2015) &
+                   year.between(2001, 2014) &
                    rounds.funding_round_code.notnull()]
             .group_by([year, 'funding_round_code'])
             .size())
