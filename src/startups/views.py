@@ -8,10 +8,17 @@ from .models import Startup
 import requests
 from requests.exceptions import HTTPError
 import pycrunchbase as pyc
+import urllib
 
+# def get_giphy():
+#     c = safygiphy.Giphy(token='dc6zaTOxFJmzC')
+#     r = c.random(tag="startup")
+#     print(r)
+#     return r
 
 class StartupIndex(ListView):
     model = Startup
+
     # template_name = "index.html"
     #
     # def get_context_data(self, **kwargs):
@@ -97,6 +104,7 @@ def startup_view(request, object_id=None):
         "founders": founders(startup_str),
         "funding_rounds": funding_rounds(startup_str),
         "investors": investors(startup_str),
+        "get_logo": get_logo(startup_str),
     }
 
     return render(request, template, context)
@@ -115,6 +123,21 @@ def get_cb_co(company_name):
     #     "what_is_co": what_is_co,
     # }
     return what_is_co
+
+def get_logo(company_name):
+    try:
+        company = cb.organization(company_name)
+    except HTTPError:
+        return "Is this even incorporated?"
+    company = cb.organization(company_name)
+    imgs = company.images.items
+    imgs = imgs[0]
+    print(type(imgs))
+    # logo = imgs[16:].strip()
+    # context = {
+    #     "what_is_co": what_is_co,
+    # }
+    return imgs
 
 def founders(company_name):
     try:
@@ -196,3 +219,17 @@ def investors(company_name):
         return round_of_fun[:-2]
     else:
         return "-"
+
+# vote
+
+def upvote(user):
+    review = Startup.objects.get(pk=1)
+    print(review.votes.up(user))
+
+# def upvote_downvote_counter(action):
+#     up_vote = 0
+#     down_vote = 0
+#     action = input("Do you think this company will be the next unicorn (type 'success'), or will it fail? (type 'fail')")
+#     if action == 'success'.lower():
+#         up_vote += 1
+#     return(up_vote)

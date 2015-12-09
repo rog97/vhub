@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import pre_save, post_save
 from django.utils.text import slugify
 from django.core.urlresolvers import reverse
+from vote.managers import VotableManager
 # Create your models here
 
 class Startup(models.Model):
@@ -12,6 +13,8 @@ class Startup(models.Model):
     # # total_funding = models.DecimalField(max_digits=50, decimal_places=1, default=0)
     # latest_funding = models.DecimalField(max_digits=50, decimal_places=1, default=0)
     description = models.TextField()
+    votes = VotableManager()
+
 
     def __str__(self):
         return self.name
